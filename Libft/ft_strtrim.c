@@ -6,7 +6,7 @@
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 13:05:40 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/23 13:05:43 by pportill         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:28:22 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,58 +15,37 @@
 #include <stdio.h>
 #include <stddef.h>
 
+char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-void    *beggining(char *ptr, char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    size_t  cont;
-    size_t  a;
+	size_t	start;
+	size_t	end;
+	char	*aux;
 
-    cont = 0;
-    a = 0;
-    if (s1[cont] == set)
-    {
-        while(s1[cont] == set && s1[cont] != '\0')
-            cont++;
-        while(s1[cont] != '\0')
-        {
-            ptr[a] = s1[cont];
-            cont++;
-            a++;
-        }
-        ptr[a] = '\0';
-    }
-    else
-    {
-        while(s1[cont] != '\0')
-        {
-            ptr[cont] = s1[cont];
-            cont++;
-        }
-        ptr[cont] = '\0';
-    }
-    return (ptr);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	aux = ft_substr(s1, start, end - start);
+	return (aux);
 }
-
-char    *ft_strtrim(char const *s1, char const *set)
-{
-    char    *ptr;
-
-
-    if (!s1)
-        return (NULL);
-    ptr = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
-    if (ptr == NULL)
-        return (NULL);
-    beggining(ptr, s1, set);
-    return (ptr);
-}
-
+/*
+ * La
+string resultante se devuelve con una reserva de
+malloc(3
 int main()
 {
     char *s1="aaaHolaComoEstasaaaa";
-    char *set="a";
+    char *set="aa";
     char *check = ft_strtrim(s1,set);
     printf("--> %s",check);
     free(check);
 }
+*/
