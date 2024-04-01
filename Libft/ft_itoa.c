@@ -14,6 +14,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+static size_t	ft_count(int n)
+{
+	size_t	cont;
+
+	cont = 0;
+	if (n < 0)
+	{
+		cont++;
+		n *= -1;
+	}
+	while (n % 10 > 0)
+	{
+		cont++;
+		n = n / 10;
+	}
+	return (cont);
+}
+
 static void	ft_fill(char *ptr, int n, size_t cont)
 {
 	ptr[cont] = '\0';
@@ -36,33 +54,24 @@ char	*ft_itoa(int n)
 	int		m;
 	char	*ptr;
 
-	cont = 0;
 	m = n;
-	if (n < 0)
-	{
-		cont++;
-		n *= -1;
-	}
-	while (n % 10 > 0)
-	{
-		cont++;
-		n = n / 10;
-	}
+	cont = ft_count(n);
 	if (m == 0)
 	{
-		ptr = (char *)malloc(1 * sizeof(char *));
+		ptr = (char *)malloc((1 + 1) * sizeof(char));
 		ptr[0] = '0';
+		ptr[1] = '\0';
 	}
 	else
 	{
-		ptr = (char *)malloc(cont * sizeof(char *));
+		ptr = (char *)malloc((cont + 1) * sizeof(char));
 		ft_fill(ptr, m, cont);
 	}
 	return (ptr);
 }
-int main ()
+/*int main ()
 {
-    int a=-1234;
+    int a=0;
     printf("--> %s", ft_itoa(a));
     return (0);
-}
+}*/
