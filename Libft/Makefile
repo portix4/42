@@ -28,12 +28,25 @@ SRCS = ft_isalpha.c \
        ft_strlcat.c \
        ft_substr.c
 
+BONUS_SRCS = ft_bonus_function_bonus.c \
+             ft_another_bonus_function_bonus.c
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+
+bonus: $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+ ranlib $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
 %.o: %.c
@@ -47,4 +60,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
