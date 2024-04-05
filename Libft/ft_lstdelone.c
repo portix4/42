@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 11:31:49 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/13 12:01:55 by pportill         ###   ########.fr       */
+/*   Created: 2024/04/05 13:56:21 by pportill          #+#    #+#             */
+/*   Updated: 2024/04/05 13:56:21 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+void    ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*p;
-	size_t	cont;
-
-	p = s;
-	cont = 0;
-	while (cont < n)
-	{
-		p[cont] = '\0';
-		cont++;
-	}
+    
 }
-/*int main()
-{
-	char a[]="Hola, como estas?";
-	char b[]="Hola, como estas?";
-	bzero(a,3);
-	ft_bzero(b,3);
-	printf("C: %s\n",a);
-	printf("P: %s",b);
-	return (0);
-}*/

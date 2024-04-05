@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 11:31:49 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/13 12:01:55 by pportill         ###   ########.fr       */
+/*   Created: 2024/04/05 13:33:33 by pportill          #+#    #+#             */
+/*   Updated: 2024/04/05 13:33:33 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*p;
-	size_t	cont;
+	t_list	*aux;
 
-	p = s;
-	cont = 0;
-	while (cont < n)
+	aux = lst;
+	while (aux->next)
 	{
-		p[cont] = '\0';
-		cont++;
+		aux = aux->next;
 	}
+	return (aux);
 }
-/*int main()
-{
-	char a[]="Hola, como estas?";
-	char b[]="Hola, como estas?";
-	bzero(a,3);
-	ft_bzero(b,3);
-	printf("C: %s\n",a);
-	printf("P: %s",b);
-	return (0);
-}*/
