@@ -14,48 +14,56 @@
 #include <stddef.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *s);
+static char *ft_substr(char const *s, unsigned int start, size_t len);
 
-char    **ft_split(char const *s, char c)
+static int ft_count_words(char const *s, char c)
 {
-    char    **ptr;
-    int     row;
-    int     a;
-    int     b;
+    int i;
+    int count;
 
-    row = 0;
-    while (s[a] != '\0')
+    i = 0;
+    count = 0;
+    while (s[i])
     {
-        if (s[a] == c)
-            row++;
-        a++;
-    }    
-    **ptr = (char **)malloc(row * sizeof(char *));
-    if (ptr == NULL || c == NULL)
-        return (NULL);
-    a = 0;
-    b = 0;
-    row = 0;
-    while (s[b] != '\0')
-    {
-        if (s[b] == c)
-        {
-            while (s[b + 1] != c)
-            {
-                a++;
-                b++; 
-            }
-            ptr[row] = (char *)malloc(a * sizeof(char));
-            a = 0;      
-        }            
-        a++;
+        while (s[i] == c)
+            i++;
+        if (s[i])
+            count++;
+        while (s[i] && s[i] != c)
+            i++;
     }
-    printf("--> %d", row);    
-    return (0);
+    return (count);
 }
 
-int main()
+char **ft_split(char const *s, char c)
 {
-    ft_split("hola, como , estas",',');
-    return (0);
+    char **tab;
+    int i;
+    int j;
+    int k;
+
+    i = 0;
+    j = 0;
+    if (!s)
+        return (NULL);
+    tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+    if (!tab)
+        return (NULL);
+    while (s[i])
+    {
+        while (s[i] == c)
+            i++;
+        k = i;
+        while (s[i] && s[i] != c)
+            i++;
+        if (i > k)
+        {
+            tab[j] = ft_substr(s, k, i - k);
+            if (!tab[j])
+                return (NULL);
+            j++;
+        }
+    }
+    tab[j] = NULL;
+    return (tab);
 }

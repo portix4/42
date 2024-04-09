@@ -14,18 +14,19 @@
 #include <stdio.h> 
 #include <string.h> 
 
-void	ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			cont;
 	unsigned char	*p;
 
-	p = b;
+	p = (unsigned char *) b;
 	cont = 0;
 	while (cont < len)
 	{
 		p[cont] = (unsigned char)c;
 		cont++;
 	}
+	return (b);
 }
 /*
 int main() 
@@ -35,8 +36,8 @@ int main()
 	printf("\nBefor memset(): %s\n", str); 
   
     // Fill 8 characters starting from str[13] with '.' 
-    memset(str + 13, '.', 37); 
-	ft_memset(str2 + 13, '.', 37);
+    memset(str + 13, '.', 5); 
+	ft_memset(str2 + 13, '.', 5);
   
     printf("After memset(): %s\n", str); 
 	printf("After ftmemset: %s", str2);

@@ -13,28 +13,32 @@
 #include <string.h>
 #include <stdio.h>
 #include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	cont1;
 	size_t	cont2;
+	size_t	cont3;
 
 	cont1 = 0;
 	cont2 = 0;
-	while (dst[cont1])
-	{
+	cont3 = 0;
+	while (dst[cont1] && cont1 < dstsize)
 		cont1++;
-	}
-	while (src[cont2] && cont2 < dstsize)
-	{
-		dst[cont1] = src[cont2];
-		cont1++;
+	while (src[cont2])
 		cont2++;
+	if (dstsize == 0)
+		return (cont2);
+	while (src[cont3] && cont1 + cont3 < dstsize - 1)
+	{
+		dst[cont1 + cont3] = src[cont3];
+		cont3++;
 	}
-	if (cont2 < dstsize - 1)
-		dst[cont1] = '\0';
-	return (cont1);
-}
+	if (cont1 < dstsize)
+		dst[cont1 + cont3] = '\0';
+	return (cont1 + cont2);
+}	
 /*int main() {
     char dest[]="Adios";
     char src[]="hola";

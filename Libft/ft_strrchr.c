@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -19,28 +20,24 @@ char	*ft_strrchr(const char *s, int c)
 	int	cont;
 
 	cont = 0;
-	while (*s)
-	{
+	while (s[cont])
 		cont++;
-		s++;
-	}
 	while (cont > 0)
 	{
-		s--;
-		if (*s == c)
-			return ((char *)s);
 		cont--;
+		if (s[cont] == c)
+			return ((char *)&s[cont]);
 	}
 	return (0);
 }
 /*int main() {
     char *str = "Hola ola";
-    char *ptr = ft_strrchr(str, 'J');
+    char *ptr = ft_strrchr(str, 'o');
 
     if (ptr != NULL) {
-        printf("El caracter 'k' se encuentra en la posición: %s\n", ptr);
+        printf("El caracter se encuentra en la posición: %s\n", ptr);
     } else {
-        printf("El caracter 'k' no se encuentra en la cadena.\n");
+        printf("El caracter no se encuentra en la cadena.\n");
     }
     return 0;
-}*/
+}*/	
