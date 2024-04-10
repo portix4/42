@@ -25,6 +25,5 @@ int	ft_lstsize(t_list *lst)
 		cont++;
 		node = node->next;
 	}
-	free(node);
 	return (cont);
 }

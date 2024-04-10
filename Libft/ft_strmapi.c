@@ -15,14 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s);
-
-/*char f(unsigned int i, char c)
-{
-    char str;
-    str = c + 1;
-    return (str);
-}*/
+static size_t	ft_strlen(const char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

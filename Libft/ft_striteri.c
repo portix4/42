@@ -15,14 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s);
+static size_t	ft_strlen(const char *s);
 
-/*void f(unsigned int i, char *c)
-{
-    *c = *c + 1;
-}*/
-
-void	*ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 

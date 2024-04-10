@@ -16,8 +16,8 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	cont;
-	size_t	total;
+	size_t		cont;
+	size_t		total;
 	unsigned char	*ptr;
 
 	cont = 0;

@@ -15,25 +15,33 @@
 #include <stdio.h>
 #include <stddef.h>
 
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+static size_t ft_strlen(const char *s);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
-	size_t	c;
-	size_t	c_s1;
-	size_t	c_s2;
+	int		i;
+	int 	j;
 
+	i = 0;
+	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	c_s1 = ft_strlen(s1);
-	c_s2 = ft_strlen(s2);
-	ptr = (char *)malloc((c_s1 + c_s2 + 1) * sizeof(char));
+	ptr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)+ 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	ft_strlcat(ptr, s1, c_s1);
-	ft_strlcat(ptr, s2, c_s2);
+	while (s1[i] != '\0')
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		ptr[i] = s2[j];
+		i++;
+		j++;
+	}
+	ptr[i] = '\0';
 	return (ptr);
 }
 /*int main()
@@ -44,19 +52,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	printf("-->%s\n",s3);
 	free(s3);
 }*/
-/*
-while (s1[cont_s] != '\0')
-	{
-		ptr[cont_ptr] = s1[cont_s];
-		cont_ptr++;
-		cont_s++;
-	}
-	cont_s = 0;
-	while (s2[cont_s] != '\0')
-	{
-		ptr[cont_ptr] = s2[cont_s];
-		cont_ptr++;
-		cont_s++;
-	}
-	ptr[cont_ptr] = '\0';
-*/	
+

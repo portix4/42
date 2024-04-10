@@ -56,6 +56,12 @@ char	*ft_itoa(int n)
 
 	m = n;
 	cont = ft_count(n);
+	if (n == -2147483648)
+	{
+		ptr = (char *)malloc((11 + 1) * sizeof(char));
+		ptr = "-2147483648";
+		return (ptr);
+	}
 	if (m == 0)
 	{
 		ptr = (char *)malloc((1 + 1) * sizeof(char));
