@@ -13,7 +13,6 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,6 +27,8 @@ char	*ft_strrchr(const char *s, int c)
 		if (s[cont] == c)
 			return ((char *)&s[cont]);
 	}
+	if (s[cont] == c)
+		return ((char *)&s[cont]);
 	return (0);
 }
 /*int main() {

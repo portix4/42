@@ -15,16 +15,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
+    int cont;
+
+    cont = 0;
+	while (s[cont])
+    {
+        if (s[cont] == c)
+            return ((char *)&s[cont]);
+        cont++;
+    }
+    if (s[cont] == c)
+        return ((char *)&s[cont]);    
 	return (0);
 }
-/*
-int main() {
+/*int main() {
     const char *str = "Hola mundo";
     char *ptr = ft_strchr(str, 'm');
     

@@ -10,35 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
-#include <string.h>
 #include <stddef.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	cont1;
-	int	cont2;
-	int	cont_needle;
+	size_t	cont1;
+	size_t	cont2;
 
 	cont1 = 0;
-	cont_needle = 0;
-	if (*haystack == '\0' || *needle == '\0')
-		return (0);
-	while (needle[cont_needle] != '\0')
-		cont_needle++;
-	while (haystack[cont1] != '\0' && len > 0)
+	cont2 = 0;
+	if (needle[0] == '\0')
+		return ((char *) haystack);
+	while(haystack[cont1] != '\0' && cont1 < len)
 	{
 		cont2 = 0;
-		while ((haystack[cont1] == needle[cont2]) && haystack[cont1] != '\0')
+		if (haystack[cont1] == needle[cont2])
 		{
-			cont1++;
-			cont2++;
-			len--;
-		}
-		if (cont2 == cont_needle)
-			return ((char *) haystack + cont1 - cont2);
+			while (needle[cont2] != '\0' && haystack[cont1 + cont2] == needle[cont2] && (cont1 + cont2) < len)
+				cont2++;
+			if (needle[cont2] == '\0')
+				return ((char *)haystack + cont1);
+		}		
 		cont1++;
-		len--;
 	}
 	return (0);
 }
@@ -51,4 +46,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
         printf("No está");
     else
         printf("Puntero aqui -> %s", s3);
+	return 0;
 }*/

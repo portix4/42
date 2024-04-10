@@ -10,22 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include "libft.h"
+
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if (n == 0)
-		return (0);
-	while (*s1 && *s2 && n > 0)
+	size_t cont;
+
+	cont = 0;
+	while ((s1[cont] && s2[cont]) && cont < n)
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
-		n--;
+		if ((unsigned char)s1[cont] != (unsigned char)s2[cont])
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		cont++;	
 	}
-	if (n > 0)
-		return (*s1 - *s2);
 	return (0);
 }
 /*int main() {
@@ -37,5 +36,5 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
     printf("Resultado mi funcion: %d\n", a);
     b = strncmp(c,d,6);
     printf("Resultado funcion: %d", b);
-    return 0;}
-*/
+    return 0;
+}*/

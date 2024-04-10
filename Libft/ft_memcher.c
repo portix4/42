@@ -10,26 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
 
-char	*ft_memchr(const void *s, int c, size_t n)
+char *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	cont;
+	size_t cont;
+	const unsigned char *str;
 
 	cont = 0;
-	while ((unsigned char *)s && cont < n)
+	str = (const unsigned char *)s;
+	while (cont < n)
 	{
-		if (*(unsigned char *)s == (unsigned char)c)
-			return ((char *)s);
-		s++;
+		if (str[cont] == (unsigned char)c)
+			return ((char *)&str[cont]);
 		cont++;
 	}
 	return (0);
 }
-/*
-int main() {
+/*int main() {
     char *str = "Holka ola";
     char *ptr = ft_memchr(str, 'k',4);
 

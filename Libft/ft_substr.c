@@ -10,37 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
 
-static size_t	ft_strlen(const char *s)
-{
-	size_t	cont;
-
-	cont = 0;
-	while (*s)
-	{
-		cont++;
-		s++;
-	}
-	return (cont);
-}
+static size_t	ft_strlen(const char *s);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 	size_t	cont;
+	size_t	s_len;
 
-	cont = 0;
-	ptr = (char *)malloc((ft_strlen(s) + 1) * len);
+	if (!s) 
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
+	ptr = (char *)malloc(len + 1);
 	if (ptr == NULL)
 		return (NULL);
-	while (cont < len)
+	cont = 0;
+	while (cont < len && s[start + cont] != '\0')
 	{
 		ptr[cont] = s[start + cont];
 		cont++;
 	}
-	ptr[cont] = '\0';
+	ptr[cont] = '\0'; 
 	return (ptr);
 }
 /*

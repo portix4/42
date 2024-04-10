@@ -10,22 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-static size_t	ft_strlen(const char *s)
-{
-	size_t	cont;
-
-	cont = 0;
-	while (*s)
-	{
-		cont++;
-		s++;
-	}
-	return (cont);
-}
+static size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1)
 {
