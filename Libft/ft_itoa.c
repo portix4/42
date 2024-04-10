@@ -6,13 +6,14 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:24:12 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/26 20:00:51 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:38:45 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 static size_t	ft_count(int n)
 {

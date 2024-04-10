@@ -6,7 +6,7 @@
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 19:10:32 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/18 18:46:53 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:01:36 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		cont++;
 	}
 	if (s[cont] == c)
-		return ((char *)&s[cont]);    
+		return ((char *)&s[cont]);
 	return (0);
 }
 /*int main() {

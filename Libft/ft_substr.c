@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:01:40 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/22 18:00:07 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:41:26 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-static size_t	ft_strlen(const char *s);
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	cont;
 	size_t	s_len;
 
-	if (!s) 
+	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
@@ -37,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[cont] = s[start + cont];
 		cont++;
 	}
-	ptr[cont] = '\0'; 
+	ptr[cont] = '\0';
 	return (ptr);
 }
 /*

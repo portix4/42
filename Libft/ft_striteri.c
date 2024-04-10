@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 19:24:11 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/01 19:24:11 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:40:55 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static size_t	ft_strlen(const char *s);
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
-	if (!s || !f)
-		return (NULL);
 	i = 0;
 	while (s[i])
 	{

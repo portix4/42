@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:50:35 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/07 19:50:35 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:40:04 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static t_list	*ft_lstnew(void *content);
-static void	ft_lstclear(t_list **lst, void (*del)(void *));
-static void	ft_lstadd_back(t_list **lst, t_list *new);
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

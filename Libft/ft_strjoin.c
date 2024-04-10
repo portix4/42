@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 18:04:44 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/23 12:52:48 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:02:55 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 #include <stdio.h>
 #include <stddef.h>
 
-static size_t ft_strlen(const char *s);
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
 	int		i;
-	int 	j;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -52,4 +50,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	printf("-->%s\n",s3);
 	free(s3);
 }*/
-

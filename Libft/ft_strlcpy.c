@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:09:15 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/17 17:40:37 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:00:04 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {

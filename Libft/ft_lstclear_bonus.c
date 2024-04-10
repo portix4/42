@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:59:40 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/05 17:59:40 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:39:50 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-static void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

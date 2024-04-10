@@ -6,7 +6,7 @@
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 13:48:34 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/22 15:59:24 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:52:35 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t		cont;
-	size_t		total;
+	size_t			cont;
+	size_t			total;
 	unsigned char	*ptr;
 
 	cont = 0;

@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:38:54 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/03 18:12:33 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:20:48 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	ft_striteri(char *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+	void			*content;
+	struct s_list	*next;
 }			t_list;
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

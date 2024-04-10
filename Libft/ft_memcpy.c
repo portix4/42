@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:02:48 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/13 13:27:00 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:46:15 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void	ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t		cont;
 	char		*pdest;
@@ -28,6 +28,7 @@ void	ft_memcpy(void *dest, const void *src, size_t n)
 		pdest[cont] = psrc[cont];
 		cont++;
 	}
+	return (dest);
 }
 /*int main()
 {
@@ -37,8 +38,8 @@ void	ft_memcpy(void *dest, const void *src, size_t n)
     char str4[] = "Adi";
     memcpy(str1, str2,4);
     ft_memcpy(str3, str4, 4);
-	printf("C: %s\n", str1);  
-    printf("P: %s", str3); 
- 
+	printf("C: %s\n", str1);
+    printf("P: %s", str3);
+
     return 0;
 }*/

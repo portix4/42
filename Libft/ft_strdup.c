@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:07:25 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/22 16:56:12 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:40:50 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-static size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1)
 {

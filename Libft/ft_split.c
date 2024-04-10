@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:30:15 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/26 16:30:17 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:59:01 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 #include <stdio.h>
-
-static char	*ft_substr(char const *s, unsigned int start, size_t len);
+#include <stdlib.h>
 
 static int	ft_count_words(char const *s, char c)
 {
@@ -35,20 +34,14 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**fill_array(char const *s, char c, char **tab)
 {
-	char	**tab;
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
-	if (!s)
-		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!tab)
-		return (NULL);
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -64,6 +57,38 @@ char	**ft_split(char const *s, char c)
 			j++;
 		}
 	}
-	tab[j] = '\0';
+	tab[j] = "\0";
 	return (tab);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	if (!s)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	tab = fill_array(s, c, tab);
+	return (tab);
+}
+/*int main() {
+    char *input_string = "Hola,que,tal,estas";
+    char delimiter = ',';
+    char **result = ft_split(input_string, delimiter);
+    if (result) {
+        int i = 0;
+        while (result[i]) {
+            printf("Subcadena %d: %s\n", i, result[i]);
+            i++;
+        }
+        for (int j = 0; result[j] != NULL; j++) {
+            free(result[j]);
+        }
+        free(result);
+    } else {
+        printf("Error al dividir la cadena.\n");
+    }
+    return 0;
+}*/

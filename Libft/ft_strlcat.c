@@ -6,7 +6,7 @@
 /*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:49:04 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/17 18:50:11 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:04:40 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (cont1 < dstsize)
 		dst[cont1 + cont3] = '\0';
 	return (cont1 + cont2);
-}	
+}
 /*int main() {
     char dest[]="Adios";
     char src[]="hola";

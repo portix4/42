@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 18:24:35 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/01 18:24:35 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:41:07 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-static size_t	ft_strlen(const char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
