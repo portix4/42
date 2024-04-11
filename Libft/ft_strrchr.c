@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:19 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/18 19:23:44 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/11 20:18:39 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	cont;
+	size_t	i;
+	char	*aux_null;
+	char	aux_c;
 
-	cont = 0;
-	while (s[cont])
-		cont++;
-	while (cont > 0)
+	aux_null = NULL;
+	i = 0;
+	aux_c = (char) c;
+	while (s[i])
 	{
-		cont--;
-		if (s[cont] == c)
-			return ((char *)&s[cont]);
+		if (s[i] == aux_c)
+			aux_null = (char *)&s[i];
+		i++;
 	}
-	if (s[cont] == c)
-		return ((char *)&s[cont]);
-	return (0);
+	if (s[i] == aux_c)
+		aux_null = (char *)&s[i];
+	return (aux_null);
 }
 /*int main() {
     char *str = "Hola ola";
@@ -41,4 +41,4 @@ char	*ft_strrchr(const char *s, int c)
         printf("El caracter no se encuentra en la cadena.\n");
     }
     return 0;
-}*/	
+}*/
