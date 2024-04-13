@@ -6,12 +6,11 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:59:40 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/11 18:10:17 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:14:32 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

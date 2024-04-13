@@ -6,14 +6,14 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:36:30 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/11 20:29:12 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:23:03 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	cont;
 
