@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:29:09 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/11 17:44:58 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:54:00 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*psrc;
 	size_t		cont;
 
-	if (dst == NULL || src == NULL)
-		return (NULL);
+	if (dst == NULL && src == NULL)
+		return (dst);
 	pdst = (char *)dst;
 	psrc = (char *)src;
 	cont = 0;

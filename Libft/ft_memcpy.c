@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:02:48 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 18:46:15 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:52:03 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	cont = 0;
 	pdest = dest;
 	psrc = src;
+	if (src == NULL && dest == NULL)
+		return (dest);
 	while (cont < n)
 	{
 		pdest[cont] = psrc[cont];

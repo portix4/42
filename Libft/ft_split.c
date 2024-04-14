@@ -6,77 +6,80 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:30:15 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/13 14:15:12 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:16:43 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *str, char c)
-{
-	int	cont;
-	int	i;
+#include "libft.h"
 
-	cont = 0;
-	i = 0;
-	if (*str == NULL || *str == " ")
-		return (0);
-	while (str[i])
-	{
-		if (str[i] == c)
-			cont++;
-	}
-}
-
-int	ft_free(char **str)
+static	void	ft_free(char **res)
 {
 	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
+	i = -1;
+	while (res[++i])
+		free(res[i]);
+	free(res);
 }
 
-char	*fill_word(char *str, int size)
+static	size_t	count_words(char const *s, char c)
 {
-	char *c;
-	int	i;
-
-	i = 0;
-	c = malloc((size + 1) * sizeof(char *));
-	c = ft_strdup(str);
-	return (c);
-}
-
-char **ft_split(char const *s, char c)
-{
-	int cont_words;
-	int **words_array;
 	size_t	i;
-	size_t	j;
+	size_t	words;
 
 	i = 0;
-	cont_words = count_words(s, c);
-	words_array = malloc(cont_words * sizeof(int *));
+	words = 0;
 	while (s[i])
 	{
-		j = 1;
-		if (s[i] == c)
-		{
-			while (s[i + j])
-			{
-				if (s[i + j] == c || s[i + j + 1] == '\0')
-				{
-
-				}
-					return
-				j++;
-			}
-
-		}
+		if ((s[i + 1] == c || s[i + 1] == '\0') && s[i] != c)
+			words++;
+		i++;
 	}
+	return (words);
+}
+
+static	char	**write_result(char const *s, char c, char	**res)
+{
+	size_t	start;
+	size_t	i;
+	size_t	word;
+
+	start = 0;
+	i = 0;
+	word = 0;
+	while (s[i])
+	{
+		if ((s[i + 1] == c || s[i + 1] == '\0') && s[i] != c)
+		{
+			res[word] = ft_substr(s, start, i - start + 1);
+			if (!res[word])
+			{
+				ft_free(res);
+				return (0);
+			}
+			word++;
+		}
+		if (s[i] == c && (s[i + 1] != c || s[i + 1] != '\0'))
+			start = i + 1;
+		i++;
+	}
+	res[word] = 0;
+	return (res);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	char	**res;
+
+	i = 0;
+	if (!s)
+		return (0);
+	res = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!res)
+		return (0);
+	res = write_result(s, c, res);
+	return (res);
 }

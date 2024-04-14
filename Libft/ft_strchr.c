@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 19:10:32 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 19:01:36 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/14 12:24:52 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,11 @@ char	*ft_strchr(const char *s, int c)
 	cont = 0;
 	while (s[cont])
 	{
-		if (s[cont] == c)
-			return ((char *)&s[cont]);
+		if (s[cont] == (char)c)
+			return (&((char *)s)[cont]);
 		cont++;
 	}
-	if (s[cont] == c)
-		return ((char *)&s[cont]);
+	if ((char)c == '\0')
+		return (&((char *)s)[cont]);
 	return (0);
 }
-/*int main() {
-    const char *str = "Hola mundo";
-    char *ptr = ft_strchr(str, 'm');
-    
-    if (ptr != NULL) {
-        printf("El caracter 'm' se encuentra en la posición: %s\n", ptr);
-    } else {
-        printf("El caracter 'm' no se encuentra en la cadena.\n");
-    }
-    
-    return 0;
-}*/
