@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:38:54 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/13 12:22:26 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:33:53 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <stddef.h>
 
 typedef struct s_list
 {

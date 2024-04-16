@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:19 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/11 20:18:39 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:34:22 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 		aux_null = (char *)&s[i];
 	return (aux_null);
 }
-/*int main() {
-    char *str = "Hola ola";
-    char *ptr = ft_strrchr(str, 'o');
-
-    if (ptr != NULL) {
-        printf("El caracter se encuentra en la posición: %s\n", ptr);
-    } else {
-        printf("El caracter no se encuentra en la cadena.\n");
-    }
-    return 0;
-}*/

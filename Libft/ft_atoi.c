@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 20:00:34 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/22 13:18:02 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:28:52 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	ft_atoi(const char *str)
 {
@@ -40,10 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (n * signo);
 }
-/*int main ()
-{
-    printf("Función C: %d", atoi("-dd 23+-4234"));
-    printf("\nRes: %d", ft_atoi("-dd 23+-4234"));
-
-    return 0;
-}*/

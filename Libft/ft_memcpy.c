@@ -6,13 +6,11 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:02:48 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/14 13:52:03 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:36:55 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -32,16 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*int main()
-{
-    char str1[] = "Hola";
-    char str2[] = "Adi";
-    char str3[] = "Hola";
-    char str4[] = "Adi";
-    memcpy(str1, str2,4);
-    ft_memcpy(str3, str4, 4);
-	printf("C: %s\n", str1);
-    printf("P: %s", str3);
-
-    return 0;
-}*/

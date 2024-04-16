@@ -6,13 +6,11 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:01:40 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 18:41:26 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:38:04 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -39,12 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr[cont] = '\0';
 	return (ptr);
 }
-/*
-int main ()
-{
-    const char *s1="Pablo";
-    char *result = ft_substr(s1,4,1);
-    printf("%s", result);
-    free(result);
-    return (0);
-}*/

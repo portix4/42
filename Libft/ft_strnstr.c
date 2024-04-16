@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:53:53 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 19:12:09 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:34:31 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stddef.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -39,14 +37,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*int main()
-{
-    const char s1[]="Hola como estas";
-    const char s2[]="as";
-    char *s3=ft_strnstr(s1, s2, 16);
-    if (s3 == NULL)
-        printf("No está");
-    else
-        printf("Puntero aqui -> %s", s3);
-	return 0;
-}*/

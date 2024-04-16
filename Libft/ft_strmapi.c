@@ -6,14 +6,11 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 18:24:35 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 18:41:07 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:34:46 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -34,10 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*int main()
-{
-    char str1[] = "abc";
-    char* str2;
-    str2 = ft_strmapi(str1, *f);
-    printf("%s\n", str2);
-}*/

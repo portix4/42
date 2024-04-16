@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:39:56 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 20:08:12 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:29:49 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-/*
-int main()
-{
-	char ch = 'ç';
-
-printf("C: %d\n", isalnum(ch));
-printf("Yo: %d", ft_isalnum(ch));
-}*/

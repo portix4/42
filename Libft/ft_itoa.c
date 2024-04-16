@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:24:12 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/13 11:29:42 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:30:35 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,3 @@ char	*ft_itoa(int n)
 	}
 	return (ptr);
 }
-/*int main ()
-{
-    int a=0;
-    printf("--> %s", ft_itoa(a));
-    return (0);
-}*/

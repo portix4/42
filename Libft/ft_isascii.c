@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pportill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:05:38 by pportill          #+#    #+#             */
-/*   Updated: 2024/03/12 18:18:06 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:29:58 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-/*
-int main() {
-    char ch = ' ';
-    printf("C: %d\n", isascii(ch));
-    printf("Yo: %d", ft_isascii(ch));
-    return 0;
-}*/

@@ -6,14 +6,11 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 18:04:44 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/10 19:02:55 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:35:37 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
-#include <stddef.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -42,11 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*int main()
-{
-	char *s1="Holo";
-	char *s2="Odios";
-	char *s3=ft_strjoin(s1,s2);
-	printf("-->%s\n",s3);
-	free(s3);
-}*/

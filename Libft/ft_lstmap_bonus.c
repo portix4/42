@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:50:35 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/13 12:14:22 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:31:20 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*aux_list;
-	t_list	*aux_node;
+	t_list	*element;
+	t_list	*new;
+	void	*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	aux_list = NULL;
+	new = NULL;
 	while (lst)
 	{
-		aux_node = ft_lstnew(f(lst->content));
-		if (aux_node == NULL)
+		content = f(lst->content);
+		element = ft_lstnew(content);
+		if (!element)
 		{
-			ft_lstclear(&aux_list, del);
-			return (NULL);
+			free(content);
+			ft_lstclear(&new, del);
+			return (0);
 		}
-		ft_lstadd_back(&aux_list, aux_node);
-		lst = lst->next;
+		ft_lstadd_back(&new, element);
+		lst = lst -> next;
 	}
-	return (aux_list);
+	return (new);
 }

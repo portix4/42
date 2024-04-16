@@ -6,7 +6,7 @@
 /*   By: pportill <pportill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:09:15 by pportill          #+#    #+#             */
-/*   Updated: 2024/04/11 19:27:18 by pportill         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:35:14 by pportill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	}
 	return (size_src);
 }
-/*int main ()
-{
-    char dest[5];
-    char src[]="hola";
-    char dest1[5];
-    char src1[]="hola";
-    printf("%zu\n", ft_strlcpy(dest,src,5));
-    printf("%s",dest);
-    printf("%zu\n", strlcpy(dest1,src1,5));
-    printf("%s",dest1);
-    return 0;
-}*/
-/*
-	size_t	cont;
-
-	cont = 0;
-	if (!src)
-		return (0);
-	while (src[cont] != '\0' && cont + 1 < dstsize)
-	{
-		dest[cont] = src[cont];
-		cont++;
-	}
-	if (cont < dstsize - 1)
-		dest[cont] = '\0';
-	while (src[cont] != '\0')
-		cont++;
-	return (cont);
-	*/
