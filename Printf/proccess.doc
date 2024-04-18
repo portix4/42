@@ -1,0 +1,17 @@
+printf es una función que devuelve un int
+
+el formate es este: int ft_printf(char const *, ...);
+y significa esto -> printf("hola mi nombre es %s y tengo %d años", "Pablo", 35);
+char const * = "hola mi nombre es %s y tengo %d años"
+... = "Pablo", 35
+con va_start, va_arg, va_copy, va_end vamos a recoger las variables/argumentos
+
+usan la libreria <stdarg.h>
+
+al final cuando se usa va_end, va_list es "undefined"
+
+va_list es una variable // va_list = args;
+va_start para inicializar la lista // va_start(args, count)
+va_arg se le pasa el argumento y el tipo de argumento // va_arg(args, int)
+va_end siempre para cerrar, como free en malloc // va_end(args)
+
